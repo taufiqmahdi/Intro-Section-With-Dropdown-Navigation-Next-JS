@@ -10,6 +10,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&family=Fraunces:opsz,wght@9..144,700&display=swap"
           rel="stylesheet"
         />
+        <title>Intro Section With Dropdown Navigation Using Next JS</title>
       </Head>
       <body>
         <Main />

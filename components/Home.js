@@ -18,7 +18,7 @@ const Home = () => {
             processes, create team rituals, and watch productivity soar.
           </Box>
           <Box>
-            <Button color='neutral.almostWhite' bg='neutral.almostBlack' borderRadius='10px'>Learn more</Button>
+            <Button _hover={{bg: 'neutral.almostWhite', outline: '2px solid', color: 'neutral.almostBlack'}} color='neutral.almostWhite' bg='neutral.almostBlack' borderRadius='10px'>Learn more</Button>
           </Box>
           <Flex gap='15px' >
             <Image src='client-databiz.svg' alt='client-databiz' objectFit='contain'  />
