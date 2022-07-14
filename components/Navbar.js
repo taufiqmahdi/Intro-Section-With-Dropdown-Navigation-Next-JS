@@ -6,6 +6,9 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
+  Show,
+  Icon,
+  Hide,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
@@ -15,10 +18,13 @@ const Navbar = () => {
   // isOpen ? 'icon-arrow-down.svg' : 'icon-arrow-up.svg'
 
   return (
-    <Flex gap="15px" w="100%">
-      <Flex w="100%">
+    <Flex p={{mobile: '10px'}} gap="15px" w="100%" >
+      <Flex w="100%"  >
         <Image src="logo.svg" alt="logo" objectFit="contain" pr="25px" />
 
+        
+
+        <Hide below='desktop'>
         <Menu
           onOpen={() => {
             setIsFeaturesOpen(false);
@@ -95,20 +101,28 @@ const Navbar = () => {
           </MenuList>
         </Menu>
 
-        <Button bg="none" _hover="none">
+        <Button bg="none" _hover={{}}>
           Careers
         </Button>
-        <Button bg="none" _hover="none">
+        <Button bg="none" _hover={{}}>
           About
         </Button>
+        </Hide>
       </Flex>
-      <Flex justify="right" w="100%">
-        <Button bg="none" _hover="none">
+      
+      
+      <Flex justify='right' w="100%">
+      <Hide below='desktop'>
+        <Button bg="none" _hover={{}}>
           Login
         </Button>
-        <Button bg="none" _hover="none" outline="2px solid">
+        <Button bg="none" _hover={{}} outline="2px solid">
           Register
         </Button>
+      </Hide>
+        <Show below='desktop'>
+          <Image src='icon-menu.svg' objectFit='contain' />
+        </Show>
       </Flex>
     </Flex>
   );

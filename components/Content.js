@@ -1,16 +1,18 @@
 import { Box } from "@chakra-ui/react";
 import Home from "./Home";
+import Navbar from "./Navbar";
 
 const Content = () => {
   return (
     <Box
-      h="100vh"
-      w="100vw"
-      px="25px"
-      py="15px"
+      h={{desktop: "100%"}}
+      w={{desktop: "100%", mobile: '100vw'}}
+      px={{desktop: "25px", mobile: '10px'}}
+      py={{desktop: "15px", mobile: '10px'}}
       fontSize="18px"
       fontFamily="Epilogue"
     >
+      <Navbar />
       <Home />
     </Box>
   );
