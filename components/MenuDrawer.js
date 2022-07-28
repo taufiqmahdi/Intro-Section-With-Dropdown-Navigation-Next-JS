@@ -44,6 +44,7 @@ const MenuDrawer = () => {
       <Image
         ref={btnRef}
         src="icon-menu.svg"
+        alt="icon-menu"
         objectFit="contain"
         onClick={() => setIsOpen(true)}
       />
@@ -58,6 +59,7 @@ const MenuDrawer = () => {
           <Flex justify="right" p="25px">
             <Image
               src="icon-close-menu.svg"
+              alt="icon-close-menu"
               objectFit="contain"
               onClick={() => setIsOpen(false)}
             />
@@ -75,11 +77,13 @@ const MenuDrawer = () => {
                 Features
                 <Image
                   src="icon-arrow-down.svg"
+                  alt="icon-arrow-down"
                   objectFit="contain"
                   display={!isFeaturesOpen ? "block" : "none"}
                 />
                 <Image
                   src="icon-arrow-up.svg"
+                  alt="icon-arrow-up"
                   objectFit="contain"
                   display={isFeaturesOpen ? "block" : "none"}
                 />
@@ -134,11 +138,13 @@ const MenuDrawer = () => {
                 Company
                 <Image
                   src="icon-arrow-down.svg"
+                  alt="icon-arrow-down"
                   objectFit="contain"
                   display={!isCompanyOpen ? "block" : "none"}
                 />
                 <Image
                   src="icon-arrow-up.svg"
+                  alt="icon-arrow-up"
                   objectFit="contain"
                   display={isCompanyOpen ? "block" : "none"}
                 />

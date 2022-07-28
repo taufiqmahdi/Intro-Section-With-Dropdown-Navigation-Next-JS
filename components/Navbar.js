@@ -30,113 +30,127 @@ const Navbar = () => {
   // const btnRef = useRef()
 
   return (
-    <Flex p={{mobile: '20px'}} gap="15px" w="100%" pb='25px' >
-      <Flex w="100%" >
+    <Flex p={{ mobile: "20px" }} gap="15px" w="100%" pb="25px">
+      <Flex w="100%">
         <Image src="logo.svg" alt="logo" objectFit="contain" pr="25px" />
 
-        
-
-        <Hide below='desktop'>
-        <Menu
-          onOpen={() => {
-            setIsFeaturesOpen(false);
-          }}
-          onClose={() => {
-            setIsFeaturesOpen(true);
-          }}
-        >
-        <Flex>
-          <MenuButton
-            as={Button}
-            flexDirection="row"
-            bg="none"
-            _hover={{ bg: "none" }}
+        <Hide below="desktop">
+          <Menu
+            onOpen={() => {
+              setIsFeaturesOpen(false);
+            }}
+            onClose={() => {
+              setIsFeaturesOpen(true);
+            }}
           >
-            <Flex align="center" gap="5px">
-              Features
-              <Image
-                src={isFeaturesOpen ? "icon-arrow-down.svg" : "icon-arrow-up.svg"}
-                h="100%"
-              />
+            <Flex>
+              <MenuButton
+                as={Button}
+                flexDirection="row"
+                bg="none"
+                _hover={{ bg: "none" }}
+              >
+                <Flex align="center" gap="5px">
+                  Features
+                  <Image
+                    src={
+                      isFeaturesOpen
+                        ? "icon-arrow-down.svg"
+                        : "icon-arrow-up.svg"
+                    }
+                    alt={isFeaturesOpen ? "icon-arrow-down" : "icon-arrow-up"}
+                    h="100%"
+                  />
+                </Flex>
+              </MenuButton>
             </Flex>
-          </MenuButton>
-          </Flex>
-          <MenuList p="10px">
-            <MenuItem>
-              <Flex gap="5px" align="center">
-                <Image src="icon-todo.svg" alt="icon-todo" />
-                Todo List
-              </Flex>
-            </MenuItem>
-            <MenuItem>
-              <Flex gap="5px" align="center">
-                <Image src="icon-calendar.svg" alt="icon-calendar" />
-                Calendar
-              </Flex>
-            </MenuItem>
-            <MenuItem>
-              <Flex gap="5px" align="center">
-                <Image src="icon-reminders.svg" alt="icon-reminders" />
-                Reminders
-              </Flex>
-            </MenuItem>
-            <MenuItem>
-              <Flex gap="5px" align="center">
-                <Image src="icon-planning.svg" alt="icon-planning" />
-                Planning
-              </Flex>
-            </MenuItem>
-          </MenuList>
-        </Menu>
+            <MenuList p="10px">
+              <MenuItem>
+                <Flex gap="5px" align="center">
+                  <Image src="icon-todo.svg" alt="icon-todo" />
+                  Todo List
+                </Flex>
+              </MenuItem>
+              <MenuItem>
+                <Flex gap="5px" align="center">
+                  <Image src="icon-calendar.svg" alt="icon-calendar" />
+                  Calendar
+                </Flex>
+              </MenuItem>
+              <MenuItem>
+                <Flex gap="5px" align="center">
+                  <Image src="icon-reminders.svg" alt="icon-reminders" />
+                  Reminders
+                </Flex>
+              </MenuItem>
+              <MenuItem>
+                <Flex gap="5px" align="center">
+                  <Image src="icon-planning.svg" alt="icon-planning" />
+                  Planning
+                </Flex>
+              </MenuItem>
+            </MenuList>
+          </Menu>
 
-        <Menu
-          onOpen={() => {
-            setIsCompanyOpen(false);
-          }}
-          onClose={() => {
-            setIsCompanyOpen(true);
-          }}
-        >
-        <Flex>
-          <MenuButton
-            as={Button}
-            flexDirection="row"
-            bg="none"
-            _hover={{ bg: "none" }}
+          <Menu
+            onOpen={() => {
+              setIsCompanyOpen(false);
+            }}
+            onClose={() => {
+              setIsCompanyOpen(true);
+            }}
           >
-            <Flex align="center" gap="5px">
-              Company
-              <Image src={isCompanyOpen ? "icon-arrow-down.svg" : "icon-arrow-up.svg"} h="100%" />
+            <Flex>
+              <MenuButton
+                as={Button}
+                flexDirection="row"
+                bg="none"
+                _hover={{ bg: "none" }}
+              >
+                <Flex align="center" gap="5px">
+                  Company
+                  <Image
+                    src={
+                      isCompanyOpen
+                        ? "icon-arrow-down.svg"
+                        : "icon-arrow-up.svg"
+                    }
+                    alt={
+                      isCompanyOpen
+                        ? "icon-arrow-down"
+                        : "icon-arrow-up"
+                    }
+                    h="100%"
+                  />
+                </Flex>
+              </MenuButton>
             </Flex>
-          </MenuButton>
-          </Flex>
-          <MenuList p="10px">
-            <MenuItem>History</MenuItem>
-            <MenuItem>Our Team</MenuItem>
-            <MenuItem>Blog</MenuItem>
-          </MenuList>
-        </Menu>
+            <MenuList p="10px">
+              <MenuItem>History</MenuItem>
+              <MenuItem>Our Team</MenuItem>
+              <MenuItem>Blog</MenuItem>
+            </MenuList>
+          </Menu>
 
-        <Button bg="none" _hover={{}}>
-          Careers
-        </Button>
-        <Button  bg="none" _hover={{}}>
-          About
-        </Button>
+          <Button bg="none" _hover={{}}>
+            Careers
+          </Button>
+          <Button bg="none" _hover={{}}>
+            About
+          </Button>
         </Hide>
       </Flex>
-      
-      
-      <Flex justify='right'  >
-      <Hide below='desktop'>
-        <Button bg="none" _hover={{}}>
-          Login
-        </Button>
-        <Button bg="none" _hover={{}} outline="2px solid">
-          Register
-        </Button>
-      </Hide>
-        <Show below='desktop'>
+
+      <Flex justify="right">
+        <Hide below="desktop">
+          <Button bg="none" _hover={{}}>
+            Login
+          </Button>
+          <Button bg="none" _hover={{}} outline="2px solid">
+            Register
+          </Button>
+        </Hide>
+        <Show below="desktop">
           {/* <Image  src='icon-menu.svg' objectFit='contain' /> */}
           <MenuDrawer />
         </Show>
