@@ -9,17 +9,29 @@ import {
   Show,
   Icon,
   Hide,
+  useDisclosure,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerBody,
+  Input,
+  DrawerFooter,
+  Drawer,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import React, { useState, useRef } from "react";
+import MenuDrawer from "./MenuDrawer";
 
 const Navbar = () => {
   const [isFeaturesOpen, setIsFeaturesOpen] = useState(true);
   const [isCompanyOpen, setIsCompanyOpen] = useState(true);
   // isOpen ? 'icon-arrow-down.svg' : 'icon-arrow-up.svg'
+  // const { isDrawerOpen, onDrawerOpen, onDrawerClose } = useDisclosure()
+  // const btnRef = useRef()
 
   return (
-    <Flex p={{mobile: '10px'}} gap="15px" w="100%" >
-      <Flex w="100%"  >
+    <Flex p={{mobile: '20px'}} gap="15px" w="100%" pb='25px' >
+      <Flex w="100%" >
         <Image src="logo.svg" alt="logo" objectFit="contain" pr="25px" />
 
         
@@ -33,6 +45,7 @@ const Navbar = () => {
             setIsFeaturesOpen(true);
           }}
         >
+        <Flex>
           <MenuButton
             as={Button}
             flexDirection="row"
@@ -47,6 +60,7 @@ const Navbar = () => {
               />
             </Flex>
           </MenuButton>
+          </Flex>
           <MenuList p="10px">
             <MenuItem>
               <Flex gap="5px" align="center">
@@ -83,6 +97,7 @@ const Navbar = () => {
             setIsCompanyOpen(true);
           }}
         >
+        <Flex>
           <MenuButton
             as={Button}
             flexDirection="row"
@@ -94,6 +109,7 @@ const Navbar = () => {
               <Image src={isCompanyOpen ? "icon-arrow-down.svg" : "icon-arrow-up.svg"} h="100%" />
             </Flex>
           </MenuButton>
+          </Flex>
           <MenuList p="10px">
             <MenuItem>History</MenuItem>
             <MenuItem>Our Team</MenuItem>
@@ -104,14 +120,14 @@ const Navbar = () => {
         <Button bg="none" _hover={{}}>
           Careers
         </Button>
-        <Button bg="none" _hover={{}}>
+        <Button  bg="none" _hover={{}}>
           About
         </Button>
         </Hide>
       </Flex>
       
       
-      <Flex justify='right' w="100%">
+      <Flex justify='right'  >
       <Hide below='desktop'>
         <Button bg="none" _hover={{}}>
           Login
@@ -121,7 +137,8 @@ const Navbar = () => {
         </Button>
       </Hide>
         <Show below='desktop'>
-          <Image src='icon-menu.svg' objectFit='contain' />
+          {/* <Image  src='icon-menu.svg' objectFit='contain' /> */}
+          <MenuDrawer />
         </Show>
       </Flex>
     </Flex>

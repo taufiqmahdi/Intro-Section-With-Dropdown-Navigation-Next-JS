@@ -6,9 +6,9 @@ const Content = () => {
   return (
     <Box
       h={{desktop: "100%"}}
-      w={{desktop: "100%", mobile: '100vw'}}
-      px={{desktop: "25px", mobile: '10px'}}
-      py={{desktop: "15px", mobile: '10px'}}
+      w={{desktop: "100%", mobile: '375px'}}
+      px={{desktop: "25px"}}
+      py={{desktop: "15px"}}
       fontSize="18px"
       fontFamily="Epilogue"
     >
